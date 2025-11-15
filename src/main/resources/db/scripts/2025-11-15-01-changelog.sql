@@ -18,3 +18,4 @@ CREATE TABLE books
     deleted_at TIMESTAMP WITHOUT TIME ZONE,
     CONSTRAINT pk_books PRIMARY KEY (id)
 );
+
