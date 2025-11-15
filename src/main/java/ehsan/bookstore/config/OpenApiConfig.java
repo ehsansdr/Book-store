@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @OpenAPIDefinition(servers = {
     @Server(url = "http://localhost:9098", description = "local env"),
-    @Server(url = "https://gateway.sepidan.net/book-store", description = "main env")
+    @Server(url = "https://gateway.sepidan.net/book store", description = "main env")
 })
 public class OpenApiConfig {
 
@@ -27,8 +27,8 @@ public class OpenApiConfig {
   @Bean
   public OpenAPI baseOpenApi() {
     return new OpenAPI().components(new Components()).info(
-            new Info().title("book-store api").description("guide for book-store app")
-                .summary("book-store app summary")
+            new Info().title("book store api").description("guide for book store app")
+                .summary("book store app summary")
         ).addSecurityItem(new SecurityRequirement().addList("keycloak"))
         .components(new Components().addSecuritySchemes("keycloak",
             new SecurityScheme().type(Type.OAUTH2).scheme("bearer").bearerFormat("JWT")

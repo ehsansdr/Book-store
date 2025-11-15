@@ -13,7 +13,7 @@
   <artifactId>book-store</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>book-store</name>
-  <description>Loyalty project for ReArch</description>
+  <description>BookStore project for ReArch</description>
   <packaging>jar</packaging>
   <url>https://sepidan.net</url>
   <licenses>

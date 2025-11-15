@@ -1,6 +1,6 @@
 # 📦 book-store-chart
 
-A Helm chart to deploy the **Loyalty** Spring Boot 3.4 service on Kubernetes.  
+A Helm chart to deploy the **book-store** Spring Boot 3.4 service on Kubernetes.  
 Supports PostgreSQL as database and integrates with Keycloak for authentication.
 
 ---
