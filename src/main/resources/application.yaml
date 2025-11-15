@@ -6,7 +6,7 @@ iam:
   client-secret: ${KEYCLOAK_CLIENT_SECRET}
 
 database:
-  url: jdbc:postgresql://${POSTGRES_HOST}:5432/${POSTGRES_DATABASE}
+  url: jdbc:postgresql://${POSTGRES_HOST}:35432/${POSTGRES_DATABASE}
   username: ${POSTGRES_USER}
   password: ${POSTGRES_PASSWORD}
 
@@ -18,7 +18,7 @@ server:
 
 spring:
   application:
-    name: loyalty
+    name: book-store
     version: 1.0.4
   servlet:
     multipart:
@@ -26,7 +26,7 @@ spring:
       max-request-size: 12MB
   banner:
     charset: utf-8
-    location: static/banner/sepidan-loyalty.txt
+    location: static/banner/sepidan-book-store.txt
   datasource:
     url: ${database.url}
     username: ${database.username}

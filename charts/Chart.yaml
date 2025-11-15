@@ -1,6 +1,6 @@
 apiVersion: v2
-name: loyalty
-description: A Helm chart for loyalty service
+name: book-store
+description: A Helm chart for book-store service
 type: application
 version: 0.1.7
 appVersion: "1.0.4"

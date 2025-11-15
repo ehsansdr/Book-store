@@ -1,0 +1,77 @@
+package ehsan.bookstore.persistent.domain;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
+import java.time.ZonedDateTime;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+import ehsan.bookstore.constant.AffiliateActionSlug;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+@Entity
+@Table(name = "instance_action", uniqueConstraints = @UniqueConstraint(columnNames = {"tier_id",
+    "slug"}))
+@NoArgsConstructor
+@Data
+public class InstanceActions {
+
+  public InstanceActions(Instances instance, Tiers tiers, AffiliateActionSlug slug,
+      int pointAchieved) {
+    this.instance = instance;
+    this.tiers = tiers;
+    this.slug = slug;
+    this.pointAchieved = pointAchieved;
+  }
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "instance_action_gen")
+  @SequenceGenerator(name = "instance_action_gen", sequenceName = "instance_action_seq",
+      allocationSize = 1)
+  private Long id;
+
+  @ManyToOne
+  @JoinColumn(name = "instance_id")
+  @JsonIgnore
+  @ToString.Exclude
+  private Instances instance;
+
+  @ManyToOne
+  @JoinColumn(name = "tier_id")
+  @JsonIgnore
+  @ToString.Exclude
+  private Tiers tiers;
+
+  @Column(name = "slug", length = 100)
+  @Enumerated(EnumType.STRING)
+  private AffiliateActionSlug slug;
+
+  @Column(name = "description")
+  private String description;
+
+  @Column(name = "point_achieved")
+  private int pointAchieved;
+
+  @CreationTimestamp
+  @Column(name = "created_at")
+  private ZonedDateTime createdAt;
+
+  @UpdateTimestamp
+  @Column(name = "updated_at")
+  private ZonedDateTime updatedAt;
+
+  @Column(name = "deleted_at")
+  private ZonedDateTime deletedAt;
+}

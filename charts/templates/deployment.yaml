@@ -1,40 +1,40 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: loyalty
+  name: book-store
   labels:
-    app: loyalty
+    app: book-store
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: loyalty
+      app: book-store
   template:
     metadata:
       labels:
-        app: loyalty
+        app: book-store
     spec:
       imagePullSecrets:
 {{- range .Values.imagePullSecrets }}
         - name: {{ .name }}
 {{- end }}
       containers:
-        - name: loyalty
+        - name: book-store
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.service.port }}
           envFrom:
             - configMapRef:
-                name: loyalty-config
+                name: book-store-config
           env:
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: loyalty-secret
+                  name: book-store-secret
                   key: POSTGRES_PASSWORD
             - name: KEYCLOAK_CLIENT_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: loyalty-secret
+                  name: book-store-secret
                   key: KEYCLOAK_CLIENT_SECRET

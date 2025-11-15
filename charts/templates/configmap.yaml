@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: loyalty-config
+  name: book-store-config
 data:
   TOMCAT_PORT: "{{ .Values.env.TOMCAT_PORT }}"
   KEYCLOAK_URL: "{{ .Values.env.KEYCLOAK_URL }}"

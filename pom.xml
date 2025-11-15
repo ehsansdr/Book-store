@@ -10,9 +10,9 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>net.sepidan</groupId>
-  <artifactId>loyalty</artifactId>
+  <artifactId>book-store</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>loyalty</name>
+  <name>book-store</name>
   <description>Loyalty project for ReArch</description>
   <packaging>jar</packaging>
   <url>https://sepidan.net</url>
@@ -29,7 +29,7 @@
     <connection/>
     <developerConnection/>
     <tag/>
-    <url>https://gitlab.sepidan.net/backend/loyalty#</url>
+    <url>https://gitlab.sepidan.net/backend/book-store#</url>
   </scm>
   <properties>
     <java.version>21</java.version>

@@ -1,4 +1,4 @@
-# 📦 loyalty-chart
+# 📦 book-store-chart
 
 A Helm chart to deploy the **Loyalty** Spring Boot 3.4 service on Kubernetes.  
 Supports PostgreSQL as database and integrates with Keycloak for authentication.
@@ -26,7 +26,7 @@ You can override these values with `--set` or by editing `values.yaml`.
 | Parameter                | Type   | Default                                        | Description                        |
 |-------------------------:|:------:|:----------------------------------------------:|-----------------------------------|
 | `replicaCount`           | int    | `1`                                            | Number of application pods         |
-| `image.repository`       | string | `"reg.sepidan.net/sepidan/loyalty"`           | Docker image repository            |
+| `image.repository`       | string | `"reg.sepidan.net/sepidan/book-store"`           | Docker image repository            |
 | `image.tag`              | string | `"latest"`                                     | Docker image tag                   |
 | `image.pullPolicy`       | string | `IfNotPresent`                                 | Image pull policy                  |
 | `imagePullSecrets`       | list   | `- name: reg-sepidan-cred`                     | Credentials for private registry   |
@@ -42,10 +42,10 @@ You can override these values with `--set` or by editing `values.yaml`.
 | `env.TOMCAT_PORT`           | string | `"9098"`                                            | Tomcat server port               |
 | `env.KEYCLOAK_URL`          | string | `"https://sso.sepidan.net"`                         | Keycloak server URL              |
 | `env.KEYCLOAK_REALM`        | string | `"sepidan"`                                         | Keycloak realm                   |
-| `env.KEYCLOAK_CLIENT_ID`    | string | `"loyalty"`                                         | Keycloak client ID               |
+| `env.KEYCLOAK_CLIENT_ID`    | string | `"book-store"`                                         | Keycloak client ID               |
 | `env.POSTGRES_HOST`         | string | `"postgres-headless.postgres.svc.cluster.local"`    | PostgreSQL host                  |
-| `env.POSTGRES_DATABASE`     | string | `"loyalty"`                                         | PostgreSQL database name         |
-| `env.POSTGRES_USER`         | string | `"loyalty_user"`                                    | PostgreSQL username              |
+| `env.POSTGRES_DATABASE`     | string | `"book-store"`                                         | PostgreSQL database name         |
+| `env.POSTGRES_USER`         | string | `"book-store_user"`                                    | PostgreSQL username              |
 | `env.SPRING_PROFILES_ACTIVE`| string | `"dev"`                                             | Active Spring profile            |
 
 ---

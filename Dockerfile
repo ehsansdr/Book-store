@@ -28,7 +28,7 @@ CMD ["java", "-XX:+UseContainerSupport","-jar", "app.jar"]
 #
 #WORKDIR /app
 ## Copy your local built JAR into the image
-#COPY target/loyalty-0.0.1-SNAPSHOT.jar app.jar
+#COPY target/book-store-0.0.1-SNAPSHOT.jar app.jar
 #
 #EXPOSE ${TOMCAT_PORT}
 #
