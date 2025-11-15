@@ -7,7 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BookStoreApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BookStoreApplication.class, args);
+    // http://localhost:9098/api-docs/swagger-ui/index.html
+    SpringApplication.run(BookStoreApplication.class, args);
 	}
 
 }

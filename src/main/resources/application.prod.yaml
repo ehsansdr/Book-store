@@ -40,11 +40,6 @@ spring:
       max-lifetime: 1800000      # 30 minutes
       connection-timeout: 30000  # 30 second
       pool-name: BookStorePool
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: ${iam.issuer}
 
   jpa:
     hibernate:

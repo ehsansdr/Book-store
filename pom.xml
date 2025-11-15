@@ -21,8 +21,8 @@
   </licenses>
   <developers>
     <developer>
-      <name>Shayan Davarzani</name>
-      <email>shayan@sepidan.net</email>
+      <name>Ehsan Sadroddini</name>
+      <email>sehsan251@gmail.com</email>
     </developer>
   </developers>
   <scm>
@@ -39,6 +39,7 @@
     <springdoc.version>2.7.0</springdoc.version>
     <spring-boot.validation.version>3.40</spring-boot.validation.version>
     <slf4j-api.version>1.7.25</slf4j-api.version>
+    <org.mapstruct-binding.version>0.2.0</org.mapstruct-binding.version>
     <org.mapstruct-binding.version>0.2.0</org.mapstruct-binding.version>
     <lombok.version>1.18.36</lombok.version>
     <keycloak.version>26.0.3</keycloak.version>
@@ -60,10 +61,6 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -139,11 +136,6 @@
       <!--  used when converting Keycloak roles to Spring authorities  -->
       <groupId>com.jayway.jsonpath</groupId>
       <artifactId>json-path</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.keycloak</groupId>
-      <artifactId>keycloak-admin-client</artifactId>
-      <version>${keycloak.version}</version>
     </dependency>
     <dependency>
       <groupId>com.github.eloyzone</groupId>

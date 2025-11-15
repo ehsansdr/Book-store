@@ -1,10 +1,3 @@
-iam:
-  url: ${KEYCLOAK_URL}
-  realm: ${KEYCLOAK_REALM}
-  issuer: ${iam.url}/realms/${iam.realm}
-  client-id: ${KEYCLOAK_CLIENT_ID}
-  client-secret: ${KEYCLOAK_CLIENT_SECRET}
-
 database:
   url: jdbc:postgresql://${POSTGRES_HOST}:35432/${POSTGRES_DATABASE}
   username: ${POSTGRES_USER}
@@ -26,7 +19,7 @@ spring:
       max-request-size: 12MB
   banner:
     charset: utf-8
-    location: static/banner/sepidan-book-store.txt
+    location: static/banner/book-store.txt
   datasource:
     url: ${database.url}
     username: ${database.username}
@@ -40,11 +33,6 @@ spring:
       max-lifetime: 1800000      # 30 minutes
       connection-timeout: 30000  # 30 second
       pool-name: BookStorePool
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: ${iam.issuer}
 
   jpa:
     hibernate:
