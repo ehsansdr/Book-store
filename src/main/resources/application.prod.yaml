@@ -26,7 +26,7 @@ spring:
       max-request-size: 12MB
   banner:
     charset: utf-8
-    location: static/banner/sepidan-book-store.txt
+    location: static/banner/book-store.txt
   datasource:
     url: ${database.url}
     username: ${database.username}
