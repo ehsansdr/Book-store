@@ -3,12 +3,14 @@ package ehsan.bookstore.persistent.seed;
 import ehsan.bookstore.persistent.domain.Book;
 import ehsan.bookstore.persistent.repository.BookRepository;
 import jakarta.annotation.PostConstruct;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Slf4j
 @Component
 public class BookDataSeeder implements CommandLineRunner {
 
@@ -42,7 +44,7 @@ public class BookDataSeeder implements CommandLineRunner {
       );
 
       bookRepository.saveAll(books);
-      System.out.println("20 BOOKS INSERTED INTO DATABASE!");
+      log.info("20 BOOKS INSERTED INTO DATABASE!");
     }
   }
 

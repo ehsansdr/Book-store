@@ -18,10 +18,10 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 
   // 3. Cheapest book per publisher
   @Query("""
-      SELECT b.publisher, MIN(b.price), b.title 
-      FROM Book b 
-      WHERE b.deletedAt IS NULL 
-      GROUP BY b.publisher 
+      SELECT b.publisher, MIN(b.price), b.title
+      FROM Book b
+      WHERE b.deletedAt IS NULL
+      GROUP BY b.publisher,b.title
       ORDER BY b.publisher
       """)
   List<Object[]> findCheapestBookPerPublisher();
